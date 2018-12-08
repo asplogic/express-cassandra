@@ -228,7 +228,7 @@ BaseModel._sync_es_index = function f(callback) {
   if (properties.esclient && properties.schema.es_index_mapping) {
     const keyspaceName = properties.keyspace;
     const mappingName = properties.table_name;
-    const indexName = `${keyspaceName}_${mappingName}`;
+    const indexName = mappingName;
 
     const elassandraBuilder = new ElassandraBuilder(properties.esclient);
     elassandraBuilder.assert_index(keyspaceName, indexName, (err) => {
